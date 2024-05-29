@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const ItemCount = ({stock}) => { //10
+const ItemCount = ({stock, onAdd}) => { //10
     const [contador, setContador] = useState(1);
     const [itemStock, setItemStock] = useState(stock);
+    const [visible, setVisible] = useState(true);
 
     const incrementar = () => {
         if (contador < itemStock) {
@@ -16,11 +18,12 @@ const ItemCount = ({stock}) => { //10
         }
     }
 
-    const onAdd = () => {
+    const addToCart = () => {
         if (contador <= itemStock) {
             setItemStock(itemStock - contador);
+            onAdd(contador);
             setContador(1);
-            console.log("Haz agregado " + contador + " productos al carrito!");
+            setVisible(false);
         }
     }
 
@@ -41,7 +44,7 @@ const ItemCount = ({stock}) => { //10
             </div>
             <div className="row my-1">
                 <div className="col">
-                    <button type="button" className="btn text-white text-uppercase rounded-0" style={{backgroundColor:"#D96704"} } onClick={onAdd}>Agregar Al Carrito</button>
+                    {visible ? <button type="button" className="btn text-white text-uppercase rounded-0" style={{backgroundColor:"#D96704"} } onClick={addToCart}>Agregar Al Carrito</button> : <Link to={"/cart"} className="btn text-white text-uppercase rounded-0" style={{backgroundColor:"#D96704"} }>Finalizar Compra</Link> }
                 </div>
             </div>
         </div>
