@@ -6,6 +6,8 @@ import NavBar from "./components/NavBar";
 import Checkout from "./components/Checkout";
 import CartContextProvider from "./components/context/CartContext";
 import Cart from "./components/Cart";
+import Banner from "./components/Banner";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
           <Route path={"/checkout"} element={<Checkout />} />
           <Route path={"*"} element={<Error404 />} />
         </Routes>
+        <Banner />
+        <Footer />
       </BrowserRouter>
     </CartContextProvider>
   )
