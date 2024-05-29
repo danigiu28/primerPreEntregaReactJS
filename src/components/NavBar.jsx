@@ -25,10 +25,10 @@ const NavBar = () => {
                             <NavLink className="nav-link text-dark-emphasis text-uppercase" to={"/category/newborn"}>Recién Nacido</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link text-dark-emphasis text-uppercase" to={"/category/niña"}>Niña</NavLink>
+                            <NavLink className="nav-link text-dark-emphasis text-uppercase" to={"/category/ninia"}>Niña</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link text-dark-emphasis text-uppercase" to={"/category/niño"}>Niño</NavLink>
+                            <NavLink className="nav-link text-dark-emphasis text-uppercase" to={"/category/ninio"}>Niño</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link text-dark-emphasis text-uppercase" to={"/category/accesorios"}>Accesorios</NavLink>
