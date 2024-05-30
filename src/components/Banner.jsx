@@ -15,13 +15,13 @@ const Banner = () => {
                 </div>
 
                 <div className="col-12 col-md-3 d-flex align-items-center justify-content-center" style={{ backgroundImage: `url(${bannerNinia})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", opacity: 0.9, height: "20rem" }}>
-                    <Link to={"/category/niña"} className="text-decoration-none">
+                    <Link to={"/category/ninia"} className="text-decoration-none">
                         <span className="bg-white text-uppercase px-3 py-2" style={{ color: "#D96704" }}>Niña</span>
                     </Link>
                 </div>
 
                 <div className="col-12 col-md-3 d-flex align-items-center justify-content-center" style={{ backgroundImage: `url(${bannerNinio})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", opacity: 0.9, height: "20rem" }}>
-                    <Link to={"/category/niño"} className="text-decoration-none">
+                    <Link to={"/category/ninio"} className="text-decoration-none">
                         <span className="bg-white text-uppercase px-3 py-2" style={{ color: "#D96704" }}>Niño</span>
                     </Link>
                 </div>

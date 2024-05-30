@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "./context/CartContext";
 import { Link } from "react-router-dom";
 import trash from "../assets/images/trash.svg"
+//import "bootstrap/dist/css/bootstrap.min.css";
 
 const Cart = () => {
     const { cart, removeItem, clear, getCountProducts, getSumProducts } = useContext(CartContext);
@@ -23,7 +24,17 @@ const Cart = () => {
         <div className="container my-5">
             <div className="row">
                 <div className="col">
-                    <table className="table">
+                    <table className="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Producto</th>
+                                <th className="text-center">Precio</th>
+                                <th className="text-center">Cantidad</th>
+                                <th className="text-center">Subtotal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
                                 <td colSpan={6} className="text-end"><button className="btn text-white rounded-0" style={{ backgroundColor: "#D96704" }} onClick={clear}>Vaciar Carrito</button></td>
@@ -35,13 +46,17 @@ const Cart = () => {
                                     <td className="align-middle text-center">€ {item.precio}</td>
                                     <td className="align-middle text-center">x {item.quantity}</td>
                                     <td className="align-middle text-center">€ {(item.quantity * item.precio).toFixed(2)}</td>
-                                    <td className="align-middle text-end"><img src={trash} width={24} alt="Eliminar Producto" title="Eliminar Producto" onClick={() => { removeItem(item.id) }} /></td>
+                                    <td className="align-middle text-end">
+                                        <img src={trash} width={24} alt="Eliminar Producto" title="Eliminar Producto" onClick={() => { removeItem(item.id) }} />
+                                    </td>
                                 </tr>
                             ))}
                             <tr>
                                 <td colSpan={4} className="text-center"><b>Total</b></td>
                                 <td className="text-center"><b>€ {getSumProducts()}</b></td>
-                                <td className="text-end"><Link to={"/checkout"} className="btn text-white rounded-0" style={{ backgroundColor: "#D96704" }}>Checkout</Link></td>
+                                <td className="text-end">
+                                    <Link to={"/checkout"} className="btn text-white rounded-0" style={{ backgroundColor: "#D96704" }}>Checkout</Link>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
